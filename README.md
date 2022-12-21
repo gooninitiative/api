@@ -10,11 +10,15 @@
 
 </p>
 
+## What is Goon
+
+Goon is an open-source platform designed to bridge the digital divide between rural and urban communities by providing offline digital services to community members.
+
 ## Getting Started
 
 ### Requirements
 
-You need to install `docker` and `docker-compose` in order to run the API.
+You need to install `docker` and `docker-compose` in order to start the API server.
 
 ### Installing the project
 
@@ -41,7 +45,3 @@ Here you can see what ports are being used:
 | 8005 | Chat API |
 | 8006 | Survey API |
 | 8007 | Internet API |
-
-## What is Goon
-
-Goon is an open-source platform designed to bridge the digital divide between rural and urban communities by providing offline digital services to community members.
