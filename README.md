@@ -5,9 +5,7 @@
     Goon APIs
 </h1>
 <p align="center">
-    An open-source platform designed to bridge the digital divide between rural and urban communities in Cameroon.
-</p>
-
+    An open-source platform designed to bridge the digital divide between rural and urban communities in Cameroon.
 </p>
 
 ## What is Goon
