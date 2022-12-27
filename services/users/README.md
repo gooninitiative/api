@@ -10,9 +10,20 @@
 
 ## Users API Service
 
-We have two type of users: **Admin** and **User**.
-We need to be able:
+We have two type of users: **Admin** and **User**. We need to be able to:
 - Create new users
 - Update users informations (need to communicate with the auth service in order to update the his password as well)
 - Read users informations
-- Delete (or just disable a user)
+- Delete users
+
+### Create
+`Admins` are responsible to create users. But a `Visitor` can decide to sign up too.
+
+### Update
+`Admins` can update any user info. A `User` can only update its own info.
+
+### Read
+Anyone can read a user info.
+
+### Delete
+Only `Admins` can delete users.
