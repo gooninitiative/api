@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  users-api:
+    ports:
+      - "8002:8000"
+
+  blog-api:
+    ports:
+      - "8003:8000"

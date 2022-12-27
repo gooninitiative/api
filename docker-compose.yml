@@ -1,15 +1,13 @@
 version: '3.8'
 services:
-  blog-api:
-    image: goon/blog-api:${TAG:-latest}
+  users-api:
+    image: goon/users-api:${TAG:-latest}
     build:
-      context: ./services/blog
-      dockerfile: .docker/Dockerfile
+      context: ./services/users
+      dockerfile: Dockerfile
     restart: unless-stopped
-    depends_on:
-      - blogdata
     environment:
-      APP_NAME: Laravel
+      APP_NAME: Goon
       APP_ENV: local
       APP_DEBUG: 'true'
       APP_KEY: base64:rG5uMcth6cEQY5OZ5MZ9TfmweANPAFswaQs1+wFoRmw=
@@ -20,8 +18,27 @@ services:
       DB_USERNAME: ${DB_USERNAME}
       DB_PASSWORD: ${DB_PASSWORD}
       QUEUE_CONNECTION: redis
-    ports:
-      - "8001:8000"
+
+  blog-api:
+    image: goon/blog-api:${TAG:-latest}
+    build:
+      context: ./services/blog
+      dockerfile: .docker/Dockerfile
+    restart: unless-stopped
+    depends_on:
+      - blogdata
+    environment:
+      APP_NAME: Goon
+      APP_ENV: local
+      APP_DEBUG: 'true'
+      APP_KEY: base64:rG5uMcth6cEQY5OZ5MZ9TfmweANPAFswaQs1+wFoRmw=
+      DB_CONNECTION: mysql
+      DB_HOST: blogdata
+      DB_PORT: 3306
+      DB_DATABASE: ${DB_DATABASE}
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      QUEUE_CONNECTION: redis
 
   blogdata:
     image: mysql:8
