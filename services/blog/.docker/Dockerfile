@@ -29,17 +29,17 @@ RUN apt-get update && \
     pecl install redis
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-COPY services/blog/.docker/prod.ini /usr/local/etc/php/conf.d/prod.ini
+COPY .docker/prod.ini /usr/local/etc/php/conf.d/prod.ini
 # Create system user to run Composer and Artisan Commands
 RUN useradd -G www-data,root -u $uid -d /home/$user $user
 RUN mkdir -p /home/$user/.composer && \
     chown -R $user:$user /home/$user
 
 WORKDIR /usr/local/src/blog
-COPY services/blog/ .
+COPY . .
 RUN chown -R $user:$user .
 USER $user
-RUN composer install --no-dev
+RUN composer install --no-dev --optimize-autoloader
 EXPOSE 8000
 ENTRYPOINT ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
 

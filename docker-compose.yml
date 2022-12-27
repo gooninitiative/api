@@ -3,8 +3,8 @@ services:
   blog-api:
     image: goon/blog-api:${TAG:-latest}
     build:
-      context: .
-      dockerfile: services/blog/.docker/Dockerfile
+      context: ./services/blog
+      dockerfile: .docker/Dockerfile
     restart: unless-stopped
     depends_on:
       - blogdata
