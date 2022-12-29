@@ -7,21 +7,14 @@ services:
       dockerfile: Dockerfile
     restart: unless-stopped
     depends_on:
-      - users-api
+      - identity-api
       - learn-api
       - blog-api
 
-  learn-api:
-    image: kiwix/kiwix-serve:${TAG:-latest}
-    restart: unless-stopped
-    command: "*.zim"
-    volumes:
-      - ./services/learn:/data
-
-  users-api:
-    image: goon/users-api:${TAG:-latest}
+  identity-api:
+    image: goon/identity-api:${TAG:-latest}
     build:
-      context: ./services/users
+      context: ./services/identity
       dockerfile: Dockerfile
     restart: unless-stopped
     environment:
@@ -36,6 +29,13 @@ services:
       DB_USERNAME: ${DB_USERNAME}
       DB_PASSWORD: ${DB_PASSWORD}
       QUEUE_CONNECTION: redis
+
+  learn-api:
+    image: kiwix/kiwix-serve:${TAG:-latest}
+    restart: unless-stopped
+    command: "*.zim"
+    volumes:
+      - ./services/learn:/data
 
   blog-api:
     image: goon/blog-api:${TAG:-latest}
