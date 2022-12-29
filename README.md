@@ -33,7 +33,7 @@ docker-compose up -d
 ```
 
 Here you can see what ports are being used:
-| Port number (on your host machine) | Service | Description |
+| Port | Service | Description |
 | --- | --- | --- |
 | 8000 | API Gateway | Every API is available via 8000 |
 | 8001 | Identity API | Giving an identity to users (authentication and creation) |
@@ -47,4 +47,6 @@ Here you can see what ports are being used:
 
 The API is designed in a set of microservices that can be plugged in and unplugged easily without breaking down other services.
 
-### Authentication
+### Authentication mechanism
+
+Services will be in a DMZ (demilitarized zone) so the authentication process will be done exclusively at the API Gateway level.
