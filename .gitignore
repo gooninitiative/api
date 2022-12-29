@@ -1,4 +1,28 @@
-/.idea
-/.vscode
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.swp
+
+pids
+logs
+results
+tmp
+
 .env
+
+# Editors
+.idea
+.vscode
+*.iml
+
+# Builds
 data/
+
+# OS metadata
+.DS_Store
+Thumbs.db
