@@ -33,13 +33,18 @@ docker-compose up -d
 ```
 
 Here you can see what ports are being used:
-| Port number (on your host machine) | Service |
-| --- | --- |
-| 8000 | Proxy. Every API available via 8000 |
-| 8001 | Authentication API |
-| 8002 | Users API |
-| 8003 | Blog API |
-| 8004 | Elearning API |
-| 8005 | Chat API |
-| 8006 | Survey API |
-| 8007 | Internet API |
+| Port number (on your host machine) | Service | Description |
+| --- | --- | --- |
+| 8000 | API Gateway | Every API is available via 8000 |
+| 8001 | Identity API | Giving an identity to users (authentication and creation) |
+| 8002 | Elearning API | Use [kiwix](https://www.kiwix.org/en/) and [kolibri](https://learningequality.org/kolibri/) to provide offline educational sources like Wikipedia. |
+| 8003 | Blog API | Writing posts, adding videos, aggregating local news from reliable news sources. |
+| 8004 | Survey API | Survey forms for needs analysis and evaluation across different projects. |
+| 8005 | Chat API | Where users should be able to exchange texts, voice messages, pdf files, audio files, and images. |
+| 8006 | Internet API | Manage vouchers to give access to the Internet (more specific service) |
+
+## Architecture
+
+The API is designed in a set of microservices that can be plugged in and unplugged easily without breaking down other services.
+
+### Authentication
