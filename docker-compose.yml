@@ -16,7 +16,7 @@ services:
     restart: unless-stopped
     command: "*.zim"
     volumes:
-      - ./learn:/data
+      - ./services/learn:/data
 
   users-api:
     image: goon/users-api:${TAG:-latest}
