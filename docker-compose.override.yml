@@ -1,5 +1,9 @@
 version: '3.8'
 services:
+  gateway:
+    ports:
+      - "8000:8000"
+
   users-api:
     ports:
       - "8002:8000"
