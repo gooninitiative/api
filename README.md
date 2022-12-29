@@ -42,6 +42,9 @@ Here you can see what ports are being used:
 | 8004 | Survey API | Survey forms for needs analysis and evaluation across different projects. |
 | 8005 | Chat API | Where users should be able to exchange texts, voice messages, pdf files, audio files, and images. |
 | 8006 | Internet API | Manage vouchers to give access to the Internet (more specific service) |
+<p>
+Note: Ports are exposed only for testing purpose. In a production environment, only the gateway port is exposed.
+</p>
 
 ## Architecture
 
