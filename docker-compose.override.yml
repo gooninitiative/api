@@ -4,13 +4,13 @@ services:
     ports:
       - "8000:8000"
 
+  identity-api:
+    ports:
+      - "8001:8000"
+
   learn-api:
     ports:
       - "8002:8080"
-
-  users-api:
-    ports:
-      - "8001:8000"
 
   blog-api:
     ports:
