@@ -16,12 +16,12 @@ tmp
 .env
 
 # Editors
-.idea
-.vscode
+.idea/
+.vscode/
 *.iml
 
 # Builds
-data/
+/data
 
 # OS metadata
 .DS_Store

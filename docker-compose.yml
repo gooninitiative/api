@@ -41,7 +41,7 @@ services:
     image: goon/blog-api:${TAG:-latest}
     build:
       context: ./services/blog
-      dockerfile: .docker/Dockerfile
+      dockerfile: Dockerfile
     restart: unless-stopped
     depends_on:
       - blog-db

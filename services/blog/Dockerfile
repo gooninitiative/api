@@ -29,7 +29,7 @@ RUN apt-get update && \
     pecl install redis
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-COPY .docker/prod.ini /usr/local/etc/php/conf.d/prod.ini
+COPY php.ini /usr/local/etc/php/conf.d/prod.ini
 # Create system user to run Composer and Artisan Commands
 RUN useradd -G www-data,root -u $uid -d /home/$user $user
 RUN mkdir -p /home/$user/.composer && \
