@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Post\CreatePostController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
@@ -20,12 +20,14 @@ use App\Http\Controllers\CommentController;
 //    return $request->user();
 //});
 
-Route::controller(PostController::class)->group(function () {
-   Route::post('/posts', 'store');
-   Route::put('/posts/{id}', 'update');
-});
+//Route::controller(PostController::class)->group(function () {
+//   Route::post('/posts', 'store');
+//   Route::put('/posts/{id}', 'update');
+//});
+//
+//Route::controller(CommentController::class)->group(function () {
+//    Route::get('/comments/{id}', 'show');
+//    Route::post('/comments', 'store');
+//});
 
-Route::controller(CommentController::class)->group(function () {
-    Route::get('/comments/{id}', 'show');
-    Route::post('/comments', 'store');
-});
+Route::post('/posts', CreatePostController::class);

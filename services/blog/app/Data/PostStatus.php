@@ -2,7 +2,7 @@
 
 namespace App\Data;
 
-use Spatie\LaravelData\Attributes\Validation\Enum;
+use Spatie\Enum\Enum;
 
 /**
  * @method static self draft()
@@ -10,5 +10,4 @@ use Spatie\LaravelData\Attributes\Validation\Enum;
  * @method static self archived()
  */
 class PostStatus extends Enum
-{
-}
+{}
