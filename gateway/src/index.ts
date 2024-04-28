@@ -11,7 +11,7 @@ const port = Number(process.env.PORT) || 8000;
 const blogServiceProxy = httpProxy('http://blog-api')
 
 // Authentication
-app.use((req, res, next) => {
+app.use((req: Request, res: Response, next) => {
   // TODO: my authentication logic
   next()
 })
